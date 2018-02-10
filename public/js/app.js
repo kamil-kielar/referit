@@ -45442,7 +45442,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -45451,9 +45451,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45640,7 +45640,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
@@ -45648,7 +45648,7 @@ if (false) {
 /* 55 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \n\n^\n      Invalid CSS after \"\": expected 1 selector or at-rule, was \"Fonts\"\n      in /Users/apple/Development/referit/resources/assets/sass/app.scss (line 1, column 1)\n    at runLoaders (/Users/apple/Development/referit/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/apple/Development/referit/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/apple/Development/referit/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/apple/Development/referit/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/apple/Development/referit/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.<anonymous> (/Users/apple/Development/referit/node_modules/async/dist/async.js:2257:31)\n    at Object.callback (/Users/apple/Development/referit/node_modules/async/dist/async.js:958:16)\n    at options.error (/Users/apple/Development/referit/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ })
 /******/ ]);

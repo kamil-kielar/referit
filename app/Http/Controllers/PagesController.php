@@ -22,5 +22,11 @@ class PagesController extends Controller
     public function play()
     {
         return view('pages.play');
-    }   
+    }
+
+    //Play game page
+    public function dashboard()
+    {
+        return view('pages.admindashboard.dashboard');
+    }
 }

@@ -38,7 +38,10 @@
 
                         <ul class="dropdown-menu">
                             <li>
+                                @if (Auth::user()->user_level == 1)
                                 <a href="/dashboard">Dashboard</a>
+                                @endif
+
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
