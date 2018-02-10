@@ -1,0 +1,29 @@
+.game-box {
+    padding: 30px;
+}
+
+.game-box h4 {
+	text-align: left;
+	margin-left: 30px;
+}
+
+.game-box h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.game-box span {
+	float: right;
+	margin-right: 30px;
+}
+
+.game-img {
+	padding: 0;
+}
+
+.game-info {
+    background-color: #F5F8FA;
+    padding: 5px;
+	
+}
