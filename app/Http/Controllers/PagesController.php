@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -22,5 +23,8 @@ class PagesController extends Controller
     public function play()
     {
         return view('pages.play');
-    }   
+
+        // $images = Image::all();
+        // return view('pages.play')->with('images', $images);
+    }
 }

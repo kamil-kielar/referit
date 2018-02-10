@@ -11,7 +11,7 @@
 				<h4>Play together with computer in single-player mode</h4>
 			</div>
 			<div class="col-md-4">
-				<a href="/play"><button type="button" class="btn btn-md btn-primary">Single-player mode</button></a>
+				<a href="/play-single"><button type="button" class="btn btn-md btn-primary">Single-player mode</button></a>
 			</div>
 		</div><hr>
 	</div>

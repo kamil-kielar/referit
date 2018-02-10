@@ -19,4 +19,4 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/game', 'PagesController@game');
 
-Route::get('/play', 'PagesController@play');
+Route::get('/play-single', 'PagesController@play');
