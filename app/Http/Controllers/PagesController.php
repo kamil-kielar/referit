@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -22,6 +23,7 @@ class PagesController extends Controller
     public function play()
     {
         return view('pages.play');
+
     }
 
     //Play game page

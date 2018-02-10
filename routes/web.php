@@ -19,15 +19,10 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/game', 'PagesController@game');
 
-Route::get('/play', 'PagesController@play');
-
 Route::get('/dashboard', 'PagesController@dashboard');
 
 Route::resource('/users', 'UserController');
 
 Route::resource('/data', 'ManageGameController');
 
-
-
-
-
+Route::get('/play-single', 'PagesController@play');
