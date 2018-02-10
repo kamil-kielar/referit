@@ -83,5 +83,6 @@ class ImagesController extends Controller
     public function destroy($id)
     {
         //
+
     }
 }

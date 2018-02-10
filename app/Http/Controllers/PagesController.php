@@ -24,7 +24,11 @@ class PagesController extends Controller
     {
         return view('pages.play');
 
-        // $images = Image::all();
-        // return view('pages.play')->with('images', $images);
+    }
+
+    //Play game page
+    public function dashboard()
+    {
+        return view('pages.admindashboard.dashboard');
     }
 }
