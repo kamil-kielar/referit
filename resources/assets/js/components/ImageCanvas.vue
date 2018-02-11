@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
     export default {
         props: ['images'],
 
@@ -36,9 +35,11 @@
             // Render random image and delete once rendered
             this.rendered = this.images[0];
 
+
         },
 
         methods: {
+
             findXY: function (e) {
 
                 var rect = e.target.getBoundingClientRect()
