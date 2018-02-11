@@ -16,26 +16,9 @@
 </template>
 
 <script>
+
     export default {
-        data() {
-            return {
-                images: [],
-                click_x: 0,
-                click_y: 0,
-                bingo: false
-            }
-        },
-
-        mounted() {
-            this.fetchImages()
-        },
-
-        methods: {
-            fetchImages() {
-                this.$http.get('images').then(response => {
-                    this.images = response.data.images
-                })
-            },
-        }
+        props: ['images']
     }
+
 </script>

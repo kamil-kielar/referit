@@ -17,23 +17,20 @@
                     	<h3 class="pull-left">Add Image</h3>
 
                         <div class="pull-right">
-                            <h3><a href="/data" class="btn btn-primary">Back</a></h3>
+                            <h3><a href="/images" class="btn btn-primary">Back</a></h3>
                         </div>
                     </div>
                     <div class="panel-body">
 
-                        <form action="{{ url('data') }}/create" method="POST">
+                        <form action="{{ url('images') }}" method="POST" enctype="multipart/form-data">
 
                             {{ csrf_field() }}
-
-                            {{ method_field('POST') }}
-
 
                             <div class="form-group{{ $errors->has('img_src') ? ' has-error' : '' }}">
                                 <label for="img_src" class="col-md-4 control-label">Image Upload</label>
 
                                 <div class="col-md-8">
-                                    <input id="img_src" type="file" class="form-control" name="img_src" value="{{ old('img_src') }}" required autofocus>
+                                    <input id="img_src" type="file" class="form-control" name="img_src" value="{{ old('img_src') }}">
 
                                     @if ($errors->has('img_src'))
                                         <span class="help-block">
