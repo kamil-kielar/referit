@@ -27,15 +27,17 @@
         },
 
         mounted() {
-            this.fetchImages()
+
         },
 
         methods: {
-            fetchImages() {
-                this.$http.get('images').then(response => {
-                    this.images = response.data.images
-                })
-            },
+            findXY: function(e) {
+                var rect = e.target.getBoundingClientRect()
+                this.click_x = e.pageX - rect.left
+                this.click_x = (Math.round(this.click_x*100)/100).toFixed(2)
+                this.click_y = e.pageY - rect.top
+                this.click_y = (Math.round(this.click_y*100)/100).toFixed(2)
+            }
         }
     }
 </script>

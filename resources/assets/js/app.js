@@ -18,7 +18,6 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('image-canvas', require('./components/ImageCanvas.vue'));
 
-
 const app = new Vue({
     el: '#app',
 
