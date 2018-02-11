@@ -45544,7 +45544,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['images']
+    props: ['images'],
+
+    data: function data() {
+        return {
+            click_x: 0,
+            click_y: 0,
+            bingo: false,
+            rendered: null
+        };
+    },
+
+
+    mounted: function mounted() {
+
+        console.log(this.images[0]);
+
+        // Render random image and delete once rendered
+        this.rendered = this.images[0];
+    },
+
+    methods: {
+        findXY: function findXY(e) {
+
+            var rect = e.target.getBoundingClientRect();
+            this.click_x = e.pageX - rect.left;
+            this.click_x = (Math.round(this.click_x * 100) / 100).toFixed(2);
+            this.click_y = e.pageY - rect.top;
+            this.click_y = (Math.round(this.click_y * 100) / 100).toFixed(2);
+
+            if (this.click_x >= Number(this.rendered.target_x) && this.click_x <= Number(this.rendered.target_x) + Number(this.rendered.target_w) && this.click_y >= Number(this.rendered.target_y) && this.click_y <= Number(this.rendered.target_y) + Number(this.rendered.target_h)) {
+
+                console.log('Bingo!');
+            } else {
+
+                console.log('Failing you noob!');
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -45555,43 +45592,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "panel panel-default" },
-    _vm._l(_vm.images, function(image) {
-      return image.id == 1
-        ? _c("div", {}, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _c("h3", [_vm._v("Testing target finding")]),
-              _vm._v(" "),
-              _c("h3", [
-                _c("span", { staticClass: "label label-default" }, [
-                  _vm._v(_vm._s(_vm.click_x) + " , " + _vm._s(_vm.click_y))
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.bingo
-                ? _c(
-                    "div",
-                    {
-                      staticClass: "alert alert-success",
-                      staticStyle: { float: "right" }
-                    },
-                    [
-                      _c("strong", [_vm._v("Well done!")]),
-                      _vm._v(" That's correct!\n        ")
-                    ]
-                  )
-                : _vm._e()
+  return _c("div", { staticClass: "panel panel-default" }, [
+    _vm.rendered
+      ? _c("div", {}, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _c("h3", [_vm._v("Testing target finding")]),
+            _vm._v(" "),
+            _c("h3", [
+              _c("span", { staticClass: "label label-default" }, [
+                _vm._v(_vm._s(_vm.click_x) + " , " + _vm._s(_vm.click_y))
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _c("img", { attrs: { src: image.img_src, alt: "" } })
-            ])
+            _vm.bingo
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "alert alert-success",
+                    staticStyle: { float: "right" }
+                  },
+                  [
+                    _c("strong", [_vm._v("Well done!")]),
+                    _vm._v(" That's correct!\n        ")
+                  ]
+                )
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c("img", {
+              attrs: { src: _vm.rendered.img_src, alt: "" },
+              on: { click: _vm.findXY }
+            })
           ])
-        : _vm._e()
-    })
-  )
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
