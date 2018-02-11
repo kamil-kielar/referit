@@ -23,6 +23,7 @@
             return {
                 click_x: 0,
                 click_y: 0,
+                clicked: false,
                 bingo: false,
                 rendered: null,
             }
@@ -41,6 +42,12 @@
         methods: {
 
             findXY: function (e) {
+
+                if(this.clicked){
+                    return false;
+                }
+
+                this.clicked = true;
 
                 var rect = e.target.getBoundingClientRect()
                 this.click_x = e.pageX - rect.left

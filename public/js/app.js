@@ -45388,7 +45388,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ImageCanvas.vue"
+Component.options.__file = "resources/assets/js/components/ImageCanvas.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -45397,9 +45397,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-37dad128", Component.options)
+    hotAPI.createRecord("data-v-d15766a8", Component.options)
   } else {
-    hotAPI.reload("data-v-37dad128", Component.options)
+    hotAPI.reload("data-v-d15766a8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45547,9 +45547,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-<<<<<<< HEAD
             click_x: 0,
             click_y: 0,
+            clicked: false,
             bingo: false,
             rendered: null
         };
@@ -45565,27 +45565,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+
         findXY: function findXY(e) {
 
-=======
-            images: [],
-            click_x: 0,
-            click_y: 0,
-            bingo: false
-        };
-    },
-    mounted: function mounted() {},
+            if (this.clicked) {
+                return false;
+            }
 
+            this.clicked = true;
 
-    methods: {
-        findXY: function findXY(e) {
->>>>>>> upstream/master
             var rect = e.target.getBoundingClientRect();
             this.click_x = e.pageX - rect.left;
             this.click_x = (Math.round(this.click_x * 100) / 100).toFixed(2);
             this.click_y = e.pageY - rect.top;
             this.click_y = (Math.round(this.click_y * 100) / 100).toFixed(2);
-<<<<<<< HEAD
 
             if (this.click_x >= Number(this.rendered.target_x) && this.click_x <= Number(this.rendered.target_x) + Number(this.rendered.target_w) && this.click_y >= Number(this.rendered.target_y) && this.click_y <= Number(this.rendered.target_y) + Number(this.rendered.target_h)) {
 
@@ -45594,8 +45587,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 console.log('Failing you noob!');
             }
-=======
->>>>>>> upstream/master
         }
     }
 });
@@ -45651,7 +45642,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-37dad128", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-d15766a8", module.exports)
   }
 }
 
