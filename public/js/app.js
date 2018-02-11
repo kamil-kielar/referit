@@ -45541,30 +45541,96 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['images'],
+
+    props: ['images', 'user'],
 
     data: function data() {
         return {
+            games: null,
             click_x: 0,
             click_y: 0,
             clicked: false,
             bingo: false,
-            rendered: null
+            rendered: null,
+            gameData: {
+                img_id: null,
+                ref_sender: null,
+                ref_checker: null,
+                user_click_x: null,
+                user_click_y: null,
+                user_ref_exp: null
+            }
         };
     },
 
 
     mounted: function mounted() {
 
-        console.log(this.images[0]);
-
-        // Render random image and delete once rendered
-        this.rendered = this.images[0];
+        this.importImages();
     },
 
     methods: {
+        importImages: function importImages() {
+
+            this.games = this.images;
+
+            this.renderGame();
+        },
+        renderGame: function renderGame() {
+
+            for (var i = 0; i <= this.games.length; i++) {
+
+                this.rendered = this.games[i];
+
+                this.games.shift();
+
+                return;
+            }
+        },
+        saveData: function saveData() {
+
+            this.clicked = false;
+
+            var data = new FormData();
+
+            data.append('img_id', this.rendered.id);
+            data.append('ref_sender', 'powinno byc puste w zaleznosci od typu gry');
+            data.append('ref_checker', this.gameData.ref_checker);
+            data.append('ref_send_time', 'zmien');
+            data.append('ref_check_time', 'zmien');
+            data.append('user_ref_exp', 'zmien');
+            data.append('user_click_x', this.gameData.user_click_x);
+            data.append('user_click_y', this.gameData.user_click_y);
+
+            axios.post('/saveGame', data).then(function (response) {
+
+                console.log(response);
+            }, function (error) {
+                console.log(error);
+            });
+        },
+
 
         findXY: function findXY(e) {
 
@@ -45579,6 +45645,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.click_x = (Math.round(this.click_x * 100) / 100).toFixed(2);
             this.click_y = e.pageY - rect.top;
             this.click_y = (Math.round(this.click_y * 100) / 100).toFixed(2);
+
+            this.gameData.img_id = this.rendered.id;
+            this.gameData.user_click_x = this.click_x;
+            this.gameData.user_click_y = this.click_y;
+            this.gameData.ref_checker = this.user.id;
 
             if (this.click_x >= Number(this.rendered.target_x) && this.click_x <= Number(this.rendered.target_x) + Number(this.rendered.target_w) && this.click_y >= Number(this.rendered.target_y) && this.click_y <= Number(this.rendered.target_y) + Number(this.rendered.target_h)) {
 
@@ -45630,10 +45701,37 @@ var render = function() {
             _c("img", {
               attrs: { src: _vm.rendered.img_src, alt: "" },
               on: { click: _vm.findXY }
-            })
+            }),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.rendered.target_ref_exp) +
+                  "\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _vm.clicked
+              ? _c("div", [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.renderGame() + _vm.saveData()
+                        }
+                      }
+                    },
+                    [_vm._v("Next Image")]
+                  )
+                ])
+              : _vm._e()
           ])
         ])
-      : _vm._e()
+      : _c("div", [_c("h1", [_vm._v(" THE END")])])
   ])
 }
 var staticRenderFns = []

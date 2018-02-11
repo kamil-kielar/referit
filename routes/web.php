@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/game', 'PagesController@game');
 
+Route::post('/saveGame', 'GameController@save');
+
 Route::get('/dashboard', 'PagesController@dashboard');
 
 Route::resource('/users', 'UserController');
