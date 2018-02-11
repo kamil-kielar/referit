@@ -45542,29 +45542,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            images: [],
-            click_x: 0,
-            click_y: 0,
-            bingo: false
-        };
-    },
-    mounted: function mounted() {
-        this.fetchImages();
-    },
-
-
-    methods: {
-        fetchImages: function fetchImages() {
-            var _this = this;
-
-            this.$http.get('images').then(function (response) {
-                _this.images = response.data.images;
-            });
-        }
-    }
+    props: ['images']
 });
 
 /***/ }),

@@ -22,7 +22,10 @@ class PagesController extends Controller
     //Play game page
     public function play()
     {
-        return view('pages.play');
+
+        $images = Image::all();
+
+        return view('pages.play', compact('images'));
 
     }
 
