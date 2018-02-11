@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <image-canvas></image-canvas>
+                <image-canvas :images="{{$images}}"></image-canvas>
     	    </div>
 	    </div>
     </div>

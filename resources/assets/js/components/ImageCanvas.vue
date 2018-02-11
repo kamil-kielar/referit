@@ -17,6 +17,8 @@
 
 <script>
     export default {
+        props: ['images'],
+
         data() {
             return {
                 images: [],
@@ -40,4 +42,5 @@
             }
         }
     }
+
 </script>
